@@ -125,8 +125,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
   <div class="sep"></div>
   <span class="tl">Mostrar:</span>
   <select id="mostrar-stock" onchange="renderGrid()">
+    <option value="todos">Todos los productos</option>
     <option value="disponibles">Solo disponibles</option>
-    <option value="todos">Todos</option>
   </select>
 </div>
 
@@ -273,6 +273,8 @@ function cerrarLB(e){
 document.addEventListener('keydown',function(e){ if(e.key==='Escape') cerrarLB(); });
 
 // ── INIT ─────────────────────────────────────────────────────
+// Mostrar todos por defecto (no filtrar por stock)
+document.getElementById('mostrar-stock').value = 'todos';
 renderPills();
 renderGrid();
 </script>
